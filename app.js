@@ -27,7 +27,6 @@ app.set('view engine', 'handlebars');
 // ]
 
 //INDEX
-
 app.get('/', (req, res) => {
     Review.find()
         .then(reviews => {
@@ -53,7 +52,6 @@ app.get('/reviews/:id', (req, res) => {
 });
 
 //EDIT
-
 app.get('/reviews/:id/edit', function (req, res) {
     Review.findById(req.params.id, function(err, review) {
         res.render('reviews-edit', {review: review});
@@ -75,8 +73,17 @@ app.post('/reviews/new', (req, res) => {
   })
 })
 
-//UPDATE
+//DELETE
+app.delete('/reviews/:id', function (req, res) {
+    console.log("DELETE review")
+    Review.findByIdAndRemove(req.params.id).then((review) => {
+        res.redirect('/');
+    }).catch((err) => {
+        console.log(err.message);
+    })
+})
 
+//UPDATE
 app.put('/reviews/:id', (req, res) => {
     Review.findByIdAndUpdate(req.params.id, req.body)
         .then(review=> {
