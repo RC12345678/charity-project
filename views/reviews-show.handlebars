@@ -2,6 +2,8 @@
 
 <a href="/">Back to Home</a>
 
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
 <h1> {{review.title}} </h1>
 <h2> {{review.movieTitle}} </h2>
 <p> {{review.description}} </p>
@@ -12,3 +14,5 @@
 <p><form method="POST" action="/reviews/{{review._id}}?_method=DELETE">
     <button type=submit">Delete</button>
 </form></p>
+</div>
+</div>
