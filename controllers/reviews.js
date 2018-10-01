@@ -1,4 +1,5 @@
 //reviews.js
+const Comment = require('../models/comment');
 
 const Review = require('../models/review')
 
@@ -21,12 +22,14 @@ module.exports = function(app) {
 
   //SHOW
   app.get('/reviews/:id', (req, res) => {
+      //find review
       Review.findById(req.params.id).then((review) => {
-          res.render('reviews-show', { review: review })
+          Comment.find({reviewId: req.params.id}).then(comments => {
+              res.render('reviews-show', {review: review, comments: comments })
+          })
       }).catch((err) => {
-          console.log(req.params.id);
           console.log(err.message);
-      })
+      });
   });
 
   //EDIT

@@ -1,3 +1,6 @@
+const Review = require('./models/review')
+const comments = require('./controllers/comments.js')
+
 var exphbs = require('express-handlebars');
 
 const express = require('express')
@@ -26,6 +29,7 @@ app.set('view engine', 'handlebars');
 const reviews = require('./controllers/reviews')(app);
 const port = process.env.PORT || 3000;
 app.listen(port);
+comments(app);
 // app.listen(3000, () => {
 //     console.log('App listening on port 3000!')
 // })
