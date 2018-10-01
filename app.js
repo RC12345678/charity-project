@@ -2,9 +2,9 @@ var exphbs = require('express-handlebars');
 
 const express = require('express')
 const app = express()
-const mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/rotten-potatoes', { useMongoClient: true});
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/rotten-potatoes');
 
 const bodyParser = require('body-parser');
 
@@ -24,9 +24,10 @@ app.set('view engine', 'handlebars');
 
 
 const reviews = require('./controllers/reviews')(app);
+const port = process.env.PORT || 3000;
+app.listen(port);
+// app.listen(3000, () => {
+//     console.log('App listening on port 3000!')
+// })
 
-app.listen(3000, () => {
-    console.log('App listening on port 3000!')
-})
-
-module.exports = app; 
+module.exports = app;
