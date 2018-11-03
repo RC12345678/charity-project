@@ -4,14 +4,14 @@ const chai = require('chai');
 const chaiHttp = require('chai-http');
 const app = require('../app');
 const should = chai.should();
-const Review = require('../models/review');
+const Review = require('../models/charity');
 
 chai.use(chaiHttp);
 
-describe('Reviews', ()  => {
+describe('Charities', ()  => {
 
   // TEST INDEX
-  it('should index ALL reviews on / GET', (done) => {
+  it('should index ALL charities on / GET', (done) => {
     chai.request(server)
         .get('/')
         .end((err, res) => {
@@ -22,9 +22,9 @@ describe('Reviews', ()  => {
   });
 
   // TEST NEW
-  it('should display new form on /reviews/new GET', (done) => {
+  it('should display new form on /charities/new GET', (done) => {
   chai.request(server)
-    .get(`/reviews/new`)
+    .get(`/charities/new`)
       .end((err, res) => {
         res.should.have.status(200);
         res.should.be.html

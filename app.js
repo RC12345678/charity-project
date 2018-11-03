@@ -1,4 +1,4 @@
-const Review = require('./models/review')
+const Review = require('./models/charity')
 const comments = require('./controllers/comments.js')
 
 var exphbs = require('express-handlebars');
@@ -26,7 +26,7 @@ app.set('view engine', 'handlebars');
 // ]
 
 
-const reviews = require('./controllers/reviews')(app);
+const charities = require('./controllers/charities')(app);
 const port = process.env.PORT || 3000;
 app.listen(port);
 comments(app);

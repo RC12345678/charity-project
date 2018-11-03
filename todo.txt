@@ -1,0 +1,28 @@
+Change into Charities with Donations
+
+-Use user centered development
+
+CHARITIES
+
+-Change the root route
+    -controllers to charities.js
+    -update app.js to grab the charities.js
+    -change the name of reviews-index to charities-index
+    -change the review model to charity model
+    -change review.js to charities.js
+    -change the attributes to what a charity has (mission, name)
+    -update charities index to reflect the new charity attributes
+
+-Change the new route
+
+-Change the create route
+
+-Change the show route
+
+-Change the edit route
+
+-Change the delete route
+
+CHANGE COMMENTS TO DONATIONS
+
+PUSH TO HEROKU 

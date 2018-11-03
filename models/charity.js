@@ -3,10 +3,10 @@ const mongoose = require('mongoose');
 
 const Comment = require('./comment.js');
 
-const Review = mongoose.model('Review', {
+const Charity = mongoose.model('Charity', {
     title: String,
     description: String,
-    movieTitle: String,
+    charityTitle: String,
 });
 
-module.exports = Review
+module.exports = Charity
