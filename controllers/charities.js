@@ -48,8 +48,13 @@ module.exports = function(app) {
   });
 
   //EDIT
-  app.get('/charities/:id/edit', (req,res) => {
-      
+  app.get('/charities/:id/edit', function (req, res) {
+      Charity.findById(req.params.id, function(err, charity) {
+          res.render('charities-edit', {charity: charity } );
+      }).catch ( (error) => {
+          console.log(error.message)
+      })
+
   })
 
   //DELETE
