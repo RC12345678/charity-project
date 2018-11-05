@@ -7,7 +7,7 @@ function comments(app) {
 app.post('/charities/comments', (req, res) => {
     console.log(req.body);
   Comment.create(req.body).then(comment => {
-    res.redirect(`/reviews/${comment.reviewId}`);
+    res.redirect(`/charities/${comment.reviewId}`);
   }).catch((err) => {
     console.log(err.message);
   });

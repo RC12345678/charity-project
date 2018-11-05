@@ -8,10 +8,10 @@
 <h2> {{charity.charityTitle}} </h2>
 <p> {{charity.description}} </p>
 
-<p><a href="/charities/{{charities._id}}/edit">Edit</a></p>
+<p><a href="/charities/{{charity._id}}/edit">Edit</a></p>
 
 <!---Delete button --->
-<p><form method="POST" action="/charities/{{charities._id}}?_method=DELETE">
+<p><form method="POST" action="/charities/{{charity._id}}?_method=DELETE">
     <button type=submit">Delete</button>
 </form></p
 

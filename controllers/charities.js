@@ -71,7 +71,7 @@ module.exports = function(app) {
   app.put('/charities/:id', (req, res) => {
       Charity.findByIdAndUpdate(req.params.id, req.body)
           .then(charity=> {
-              res.redirect(`/charities/${charities.id}`)
+              res.redirect(`/charities/${charities._id}`)
           })
           .catch(err => {
               console.log(err.message)
