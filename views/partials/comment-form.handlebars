@@ -1,7 +1,7 @@
 <!-- views/partials/comment-form.handlebars -->
 
-<form action="/charities/comments" method="post">
-<input type="hidden" value="{{charity._id}}" name="reviewId">
+<form action="/charities/{{charity._id}}/comments" method="post">
+<input type="hidden" value="{{charity._id}}" name="charityId">
   <fieldset>
     <legend>Add a Comment</legend>
     <!-- TITLE -->

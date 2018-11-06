@@ -19,13 +19,6 @@ app.use(bodyParser.urlencoded({ extended: true}));
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-// let reviews = [
-//     { title: "Great Review"},
-//     { title: "Next Review"},
-//     { title: "The Little Mermaid"}
-// ]
-
-
 const charities = require('./controllers/charities')(app);
 const port = process.env.PORT || 3000;
 app.listen(port);
