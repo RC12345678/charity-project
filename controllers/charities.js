@@ -40,6 +40,7 @@ module.exports = function(app) {
       //find charity
       Charity.findById(req.params.id).then((charity) => {
           Comment.find({charityId: req.params.id}).then(comments => {
+              console.log(comments)
               res.render('charities-show', {charity: charity, comments: comments })
           })
       }).catch((err) => {

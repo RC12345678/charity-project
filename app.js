@@ -1,13 +1,13 @@
 const Review = require('./models/charity')
-const comments = require('./controllers/comments.js')
+const commentsController = require('./controllers/comments.js')
 
 var exphbs = require('express-handlebars');
 
 const express = require('express')
 const app = express()
-var mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/rotten-potatoes');
+var mongoose = require('mongoose');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/charity_project');
 
 const bodyParser = require('body-parser');
 
@@ -22,7 +22,7 @@ app.set('view engine', 'handlebars');
 const charities = require('./controllers/charities')(app);
 const port = process.env.PORT || 3000;
 app.listen(port);
-comments(app);
+commentsController(app);
 // app.listen(3000, () => {
 //     console.log('App listening on port 3000!')
 // })
